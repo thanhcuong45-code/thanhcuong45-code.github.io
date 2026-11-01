@@ -1,0 +1,5 @@
+CÁCH THÊM CHƯƠNG MỚI
+1. Copy file quizzes/chuong1.html thành quizzes/chuong2.html
+2. Sửa tiêu đề <h1> và <title>, rồi thay nội dung mảng cauHoi bằng câu hỏi chương 2
+3. Mở index.html, thêm một dòng <li> trỏ tới quizzes/chuong2.html
+4. Upload lại các file đã sửa/thêm lên GitHub (Add file > Upload files)
