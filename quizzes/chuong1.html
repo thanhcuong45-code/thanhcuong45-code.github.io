@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chương I. Mệnh đề và tập hợp | Ôn tập Toán 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="back" href="../index.html">← Danh sách các chương</a>
+    <h1>Chương I. Mệnh đề và tập hợp</h1>
+    <p>Trắc nghiệm ôn tập, có lời giải sau khi nộp bài.</p>
+  </header>
+
+  <div class="bar"><span id="dem"></span></div>
+  <div id="quiz"></div>
+
+  <div class="actions">
+    <button class="chinh" onclick="nopBai()">Nộp bài</button>
+    <button class="phu" onclick="location.reload()">Làm lại</button>
+  </div>
+  <div id="ketqua" role="status"></div>
+  <footer>Ôn tập Toán 10</footer>
+</div>
+
+<script>
+/* ===== CẤU HÌNH ===== */
+const XAO_TRON = true;      // true: xáo thứ tự câu hỏi mỗi lần làm
+const XAO_DAP_AN = true;    // true: xáo thứ tự đáp án A, B, C, D
+
+/* ===== NGÂN HÀNG CÂU HỎI =====
+   Viết công thức LaTeX với MỘT dấu gạch chéo, giữa String.raw`...`
+   dung: 0 = A, 1 = B, 2 = C, 3 = D
+   Lưu ý: không dùng dấu huyền ` hoặc chuỗi ${ bên trong nội dung. */
+const cauHoi = [
+  {
+    de: String.raw`Cho tập hợp \(A=\{x\in\mathbb{R}\mid x^2-3x+2=0\}\). Tập \(A\) bằng:`,
+    dapan: [String.raw`\(\{1\}\)`, String.raw`\(\{2\}\)`, String.raw`\(\{1;2\}\)`, String.raw`\(\varnothing\)`],
+    dung: 2,
+    giai: String.raw`Phương trình \(x^2-3x+2=0\) có hai nghiệm \(x=1\) và \(x=2\), nên \(A=\{1;2\}\).`
+  },
+  {
+    de: String.raw`Mệnh đề phủ định của mệnh đề \(\forall x\in\mathbb{R},\ x^2\ge 0\) là:`,
+    dapan: [String.raw`\(\exists x\in\mathbb{R},\ x^2<0\)`, String.raw`\(\forall x\in\mathbb{R},\ x^2<0\)`,
+            String.raw`\(\exists x\in\mathbb{R},\ x^2\ge 0\)`, String.raw`\(\forall x\in\mathbb{R},\ x^2\le 0\)`],
+    dung: 0,
+    giai: String.raw`Phủ định của \(\forall\) là \(\exists\), phủ định của \(\ge\) là \(<\).`
+  },
+  {
+    de: String.raw`Cho \(A=[1;5)\) và \(B=(2;7]\). Tập \(A\cap B\) là:`,
+    dapan: [String.raw`\((2;5)\)`, String.raw`\([1;7]\)`, String.raw`\((2;5]\)`, String.raw`\([1;2)\)`],
+    dung: 0,
+    giai: String.raw`Phần chung của hai khoảng là \(x>2\) và \(x<5\), tức \(A\cap B=(2;5)\).`
+  },
+  {
+    de: String.raw`Mệnh đề nào sau đây là mệnh đề đúng?`,
+    dapan: [String.raw`\(\forall x\in\mathbb{R},\ x>x^2\)`, String.raw`\(\exists x\in\mathbb{N},\ x^2=3\)`,
+            String.raw`\(\forall n\in\mathbb{N},\ n^2+n\) chia hết cho \(2\)`, String.raw`\(\exists x\in\mathbb{Q},\ x^2=2\)`],
+    dung: 2,
+    giai: String.raw`Ta có \(n^2+n=n(n+1)\) là tích hai số tự nhiên liên tiếp nên luôn chia hết cho \(2\).`
+  },
+  {
+    de: String.raw`Số phần tử của tập \(\{x\in\mathbb{Z}\mid -2\le x<3\}\) là:`,
+    dapan: ["4", "5", "6", "3"],
+    dung: 1,
+    giai: String.raw`Tập đó là \(\{-2;-1;0;1;2\}\) nên có \(5\) phần tử.`
+  }
+];
+</script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>
