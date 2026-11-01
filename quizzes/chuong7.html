@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chương VII. Phương pháp toạ độ trong mặt phẳng | Ôn tập Toán 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="back" href="../index.html">← Danh sách các chương</a>
+    <h1>Chương VII. Phương pháp toạ độ trong mặt phẳng</h1>
+    <p>Trắc nghiệm ôn tập, có lời giải sau khi nộp bài.</p>
+  </header>
+
+  <div class="bar"><span id="dem"></span></div>
+  <div id="quiz"></div>
+
+  <div class="actions">
+    <button class="chinh" onclick="nopBai()">Nộp bài</button>
+    <button class="phu" onclick="location.reload()">Làm lại</button>
+  </div>
+  <div id="ketqua" role="status"></div>
+  <footer>Ôn tập Toán 10</footer>
+</div>
+
+<script>
+/* ===== CẤU HÌNH ===== */
+const XAO_TRON = true;      // true: xáo thứ tự câu hỏi mỗi lần làm
+const XAO_DAP_AN = true;    // true: xáo thứ tự đáp án A, B, C, D
+
+/* ===== NGÂN HÀNG CÂU HỎI =====
+   Viết công thức LaTeX với MỘT dấu gạch chéo, giữa String.raw`...`
+   dung: 0 = A, 1 = B, 2 = C, 3 = D
+   Lưu ý: không dùng dấu huyền ` hoặc chuỗi ${ bên trong nội dung. */
+const cauHoi = [
+  {
+    de: String.raw`CÂU MẪU: hãy thay bằng câu hỏi của bạn. Ví dụ \(2+3=?\)`,
+    dapan: ["4", "5", "6", "7"],
+    dung: 1,
+    giai: String.raw`Ta có \(2+3=5\).`
+  }
+];
+</script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>
